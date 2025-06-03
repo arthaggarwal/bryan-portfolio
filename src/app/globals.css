@@ -1,0 +1,154 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Theme from user:
+       Primary/Accent (#806cef HSL: 248 83% 68%)
+       Main Background (#d9f0ff HSL: 205 100% 93%)
+       Main Foreground/Dark Element BG (#011d27 HSL: 195 93% 8%)
+    */
+
+    /* Main page colors */
+    --background: 205 100% 93%; /* Light Blue (#d9f0ff) */
+    --foreground: 195 93% 8%; /* Dark Blue/Black (#011d27) */
+
+    /* Card colors (white background, dark text for content sections) */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 195 93% 8%; /* Dark Blue/Black (#011d27) */
+
+    /* Popover colors */
+    --popover: 195 93% 8%; /* Dark Blue/Black */
+    --popover-foreground: 205 100% 93%; /* Light Blue */
+
+    /* Primary action colors */
+    --primary: 248 83% 68%; /* Purple/Blue (#806cef) */
+    --primary-foreground: 205 100% 93%; /* Light Blue - for text on primary */
+
+    /* Secondary elements (Navbar background) */
+    --secondary: 195 93% 8%; /* Dark Blue/Black for Navbar */
+    --secondary-foreground: 205 100% 93%; /* Light Blue text for Navbar */
+
+    /* Muted text colors */
+    --muted: 205 80% 88%; /* Lighter, slightly desaturated version of background */
+    --muted-foreground: 195 70% 25%; /* Lighter shade of dark text for on light bg */
+
+    /* Accent colors */
+    --accent: 248 83% 68%; /* Purple/Blue (#806cef) */
+    --accent-foreground: 205 100% 93%; /* Light Blue - for text on accent */
+
+    /* Destructive action colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and Input fields */
+    --border: 205 100% 85%; /* Slightly darker light blue for borders on light bg */
+    --input: 195 93% 8%; /* Dark Blue/Black for input backgrounds */
+
+    /* Ring color for focus states */
+    --ring: 248 83% 68%; /* Purple/Blue (matches primary) */
+
+    /* Chart colors */
+    --chart-1: 248 83% 68%;
+    --chart-2: 195 93% 8%;
+    --chart-3: 205 80% 70%;
+    --chart-4: 248 83% 50%;
+    --chart-5: 205 60% 60%;
+    --radius: 0.5rem;
+
+    /* Sidebar variables */
+    --sidebar-background: 195 93% 12%;
+    --sidebar-foreground: 205 100% 93%;
+    --sidebar-primary: 248 83% 68%;
+    --sidebar-primary-foreground: 195 93% 8%;
+    --sidebar-accent: 248 83% 60%;
+    --sidebar-accent-foreground: 195 93% 8%;
+    --sidebar-border: 195 93% 15%;
+    --sidebar-ring: 248 83% 68%;
+  }
+
+  .dark {
+    /* Dark Theme based on new palette */
+    --background: 195 93% 5%;
+    --foreground: 205 100% 90%;
+
+    --card: 195 93% 10%;
+    --card-foreground: 205 100% 90%;
+
+    --popover: 195 93% 10%;
+    --popover-foreground: 205 100% 90%;
+
+    --primary: 248 83% 75%;
+    --primary-foreground: 195 93% 8%;
+
+    --secondary: 195 93% 12%;
+    --secondary-foreground: 205 100% 90%;
+
+    --muted: 195 80% 20%;
+    --muted-foreground: 205 90% 75%;
+
+    --accent: 248 83% 75%;
+    --accent-foreground: 195 93% 8%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 80% 15%;
+    --input: 195 93% 12%;
+
+    --ring: 248 83% 75%;
+
+    --chart-1: 248 83% 75%;
+    --chart-2: 205 100% 90%;
+    --chart-3: 205 70% 60%;
+    --chart-4: 248 83% 60%;
+    --chart-5: 205 50% 50%;
+
+    /* Sidebar variables for dark mode */
+    --sidebar-background: 195 93% 3%;
+    --sidebar-foreground: 205 100% 90%;
+    --sidebar-primary: 248 83% 75%;
+    --sidebar-primary-foreground: 195 93% 8%;
+    --sidebar-accent: 248 83% 65%;
+    --sidebar-accent-foreground: 195 93% 8%;
+    --sidebar-border: 195 93% 8%;
+    --sidebar-ring: 248 83% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    /* Removed overflow-x: hidden; to rely on MainLayout and page-specific JS */
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-montserrat), sans-serif;
+    line-height: 1.75;
+    /* Removed overflow-x: hidden; to rely on MainLayout and page-specific JS */
+
+    /* Pointy-topped equilateral hexagons, side approx 100px */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='173.205' height='150' viewBox='0 0 173.205 150'%3E%3Cdefs%3E%3Cpattern id='hexpattern' patternUnits='userSpaceOnUse' width='173.205' height='150'%3E%3Cpath d='M86.6025,0 L173.205,75 M86.6025,150 L173.205,75 M0,75 L86.6025,0 M0,75 L86.6025,150' stroke='hsla(205, 100%, 90%, 0.10)' fill='none' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hexpattern)'/%3E%3C/svg%3E");
+  }
+  .dark body {
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='173.205' height='150' viewBox='0 0 173.205 150'%3E%3Cdefs%3E%3Cpattern id='hexpattern_dark' patternUnits='userSpaceOnUse' width='173.205' height='150'%3E%3Cpath d='M86.6025,0 L173.205,75 M86.6025,150 L173.205,75 M0,75 L86.6025,0 M0,75 L86.6025,150' stroke='hsla(195, 93%, 10%, 0.2)' fill='none' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hexpattern_dark)'/%3E%3C/svg%3E");
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+  }
+}
+
+@layer components {
+  .corner-hexagon-cluster-bl {
+    @apply fixed bottom-[-120px] left-[-120px] opacity-[0.30];
+  }
+  .corner-hexagon-cluster-tr {
+    @apply fixed top-[-120px] right-[-120px] opacity-[0.30];
+  }
+}
