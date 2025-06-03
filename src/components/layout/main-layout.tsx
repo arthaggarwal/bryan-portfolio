@@ -15,9 +15,7 @@ const TripleHexagonClusterSVG = () => (
     width="545"
     height="550"
     xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    stroke="hsl(var(--primary))"
-    strokeWidth="4"
+    fill="hsl(var(--primary))" // Changed back to fill with primary color
     aria-hidden="true"
   >
     {/* Hexagon 1 (Top of the cluster) s=80 */}
