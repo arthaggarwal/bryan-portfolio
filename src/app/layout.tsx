@@ -11,8 +11,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Persona Portfolio - Bryan',
+  title: 'Bryan Goh Portfolio',
   description: 'A personal portfolio website for Bryan, showcasing experience and achievements.',
+  // Ensuring no explicit icons are defined in metadata.
+  // If a favicon.ico exists in the /public folder, Next.js might still pick it up.
 };
 
 export default function RootLayout({
